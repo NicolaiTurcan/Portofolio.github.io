@@ -1209,38 +1209,6 @@ a.feature__media:hover img {
     align-self: flex-start;
 }
 
-/* Single project on its own row: heading left, details right */
-.pcard--wide {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    gap: 8px clamp(24px, 5vw, 64px);
-    padding: clamp(24px, 3vw, 32px);
-}
-
-.pcard--wide .pcard__desc {
-    margin-top: 0;
-}
-
-.pcard__main {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.pcard__main>.link {
-    margin-top: 18px;
-}
-
-@media (max-width: 859px) {
-    .pcard--wide {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .pcard--wide .pcard__desc {
-        margin-top: 10px;
-    }
-}
-
 .pcard--media {
     padding: 0;
     overflow: hidden;

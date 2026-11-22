@@ -680,38 +680,56 @@
                     </div>
                 </article>
 
-                <!-- ML grid -->
-                <h3 class="subhead reveal" data-i18n="sub.ml">Machine Learning</h3>
-                <article class="pcard pcard--wide reveal">
-                    <div class="pcard__head">
-                        <div class="pcard__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M3 3v18h18" />
-                                <path d="M7 15l4-4 3 3 5-6" />
-                            </svg>
-                        </div>
-                        <p class="tag" data-i18n="diabetes.tag">EDA · Classification</p>
-                        <h4 class="pcard__title" data-i18n="diabetes.title">Diabetes Screening Model</h4>
-                    </div>
-                    <div class="pcard__main">
-                        <p class="pcard__desc" data-i18n="diabetes.desc">
-                            Hypothesis-driven EDA on the Pima Indians dataset, leak-free imputation of hidden
-                            missing values, and a logistic regression tuned for recall. It catches
-                            <strong>80% of diabetes cases</strong> on the test set, against 50% for the untuned model.
+                <!-- Featured: Diabetes -->
+                <article class="feature reveal">
+                    <a class="feature__media" href="https://nicolaiturcan.github.io/first_amle_project_diabetes/"
+                        target="_blank" rel="noopener" tabindex="-1">
+                        <img src="./img/diabetes.jpg" alt="Diabetes Screening project page" width="1200"
+                            height="750" loading="lazy">
+                    </a>
+                    <div class="feature__body">
+                        <p class="tag" data-i18n="diabetes.tag">EDA · Classification · Live demo</p>
+                        <h3 class="feature__title" data-i18n="diabetes.title">Diabetes Screening Model</h3>
+                        <p class="feature__desc" data-i18n="diabetes.desc">
+                            A screening model for the Pima Indians Diabetes dataset. A missed case is far more
+                            dangerous than a false alarm, so the model is tuned for recall, not accuracy, and every
+                            step is checked against baselines without leaking the test set.
                         </p>
-                        <ul class="stack stack--sm">
+                        <ul class="feature__points">
+                            <li data-i18n="diabetes.pt1">Catches <strong>43 of 54 diabetes cases (79.6%
+                                    recall)</strong> on the test set, against 50% for a plain logistic regression
+                                and 44% for a one-line glucose rule</li>
+                            <li data-i18n="diabetes.pt2">Three hypotheses written before looking at the data, tested
+                                with one-sided <strong>Mann-Whitney U tests</strong> and a Bonferroni-corrected α;
+                                hidden missing values imputed with training-set medians only</li>
+                            <li data-i18n="diabetes.pt3">Interactive project page with charts, a confusion-matrix
+                                explorer, the threshold trade-off curve and a calculator that runs the trained model
+                                in the browser</li>
+                        </ul>
+                        <ul class="stack">
+                            <li>Python</li>
                             <li>pandas</li>
                             <li>SciPy</li>
                             <li>scikit-learn</li>
                             <li>Seaborn</li>
+                            <li>uv</li>
                         </ul>
-                        <a class="link" href="https://github.com/NicolaiTurcan/first_amle_project_diabetes"
-                            target="_blank" rel="noopener">
-                            Code
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M7 17 17 7M8 7h9v9" />
-                            </svg>
-                        </a>
+                        <div class="links">
+                            <a class="link" href="https://nicolaiturcan.github.io/first_amle_project_diabetes/#try"
+                                target="_blank" rel="noopener">
+                                <span data-i18n="diabetes.live">Try the model</span>
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
+                            </a>
+                            <a class="link" href="https://github.com/NicolaiTurcan/first_amle_project_diabetes"
+                                target="_blank" rel="noopener">
+                                <span data-i18n="diabetes.code">View on GitHub</span>
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </article>
 
