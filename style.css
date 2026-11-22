@@ -910,13 +910,6 @@ code {
     border-color: var(--border-strong);
 }
 
-.soon {
-    margin-top: auto;
-    align-self: flex-start;
-    font-size: 0.78rem;
-    color: var(--faint);
-}
-
 /* Languages under the About text */
 .langs {
     margin-top: 8px;
