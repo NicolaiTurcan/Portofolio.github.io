@@ -576,8 +576,61 @@
                     </div>
                 </article>
 
-                <!-- Featured: Flower Classifier -->
+                <!-- Featured: Book RAG -->
                 <article class="feature reveal">
+                    <a class="feature__media" href="https://project-book-rag.streamlit.app/" target="_blank"
+                        rel="noopener" tabindex="-1">
+                        <img src="./img/book-rag.jpg" alt="Book RAG Streamlit app" width="1200" height="750"
+                            loading="lazy">
+                    </a>
+                    <div class="feature__body">
+                        <p class="tag" data-i18n="rag.tag">LLM · RAG · Live demo</p>
+                        <h3 class="feature__title" data-i18n="rag.title">Book RAG: Ask the Classics</h3>
+                        <p class="feature__desc" data-i18n="rag.desc">
+                            A reading companion for eight classic books from Project Gutenberg. It answers only
+                            from the books themselves and cites the exact passages each answer is based on.
+                            When the book doesn't contain the answer, it says so instead of guessing.
+                        </p>
+                        <ul class="feature__points">
+                            <li data-i18n="rag.pt1">Chat with one book or the whole library: <strong>one Chroma
+                                    collection</strong> with metadata filters, and inline citations with the book,
+                                position and relevance score</li>
+                            <li data-i18n="rag.pt2">Follow-up questions are <strong>rewritten into a standalone
+                                    query</strong> before retrieval; answers stream from gpt-oss on Groq, with
+                                token accounting</li>
+                            <li data-i18n="rag.pt3">ONNX embeddings instead of PyTorch (~2 GB smaller), crash-safe
+                                on-demand indexing, one core for the web app and the CLI, unit tests and CI</li>
+                        </ul>
+                        <ul class="stack">
+                            <li>Python</li>
+                            <li>LangChain</li>
+                            <li>Chroma</li>
+                            <li>ONNX Runtime</li>
+                            <li>Groq</li>
+                            <li>Streamlit</li>
+                            <li>pytest</li>
+                        </ul>
+                        <div class="links">
+                            <a class="link" href="https://project-book-rag.streamlit.app/" target="_blank"
+                                rel="noopener">
+                                <span data-i18n="rag.live">Try the live demo</span>
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
+                            </a>
+                            <a class="link" href="https://github.com/NicolaiTurcan/project-book-rag" target="_blank"
+                                rel="noopener">
+                                <span data-i18n="rag.code">View on GitHub</span>
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Featured: Flower Classifier -->
+                <article class="feature feature--reverse reveal">
                     <a class="feature__media" href="https://nicolai-flowers.streamlit.app/" target="_blank"
                         rel="noopener" tabindex="-1">
                         <img src="./img/flowers.jpg" alt="Flower Classifier Streamlit app" width="1200" height="750"
@@ -628,39 +681,9 @@
                 </article>
 
                 <!-- ML grid -->
-                <h3 class="subhead reveal" data-i18n="sub.ml">Machine Learning &amp; LLMs</h3>
-                <div class="grid grid--2">
-                    <article class="pcard reveal">
-                        <div class="pcard__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z" />
-                                <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5" />
-                                <path d="M9 8h7M9 12h5" />
-                            </svg>
-                        </div>
-                        <p class="tag" data-i18n="rag.tag">RAG · NLP</p>
-                        <h4 class="pcard__title" data-i18n="rag.title">Book Q&amp;A with RAG</h4>
-                        <p class="pcard__desc" data-i18n="rag.desc">
-                            Answers questions about a full-length Project Gutenberg book using only
-                            retrieved passages, and shows the passages each answer is based on.
-                            Includes a command-line tool.
-                        </p>
-                        <ul class="stack stack--sm">
-                            <li>LangChain LCEL</li>
-                            <li>Chroma</li>
-                            <li>Groq</li>
-                            <li>Regex</li>
-                        </ul>
-                        <a class="link" href="https://github.com/NicolaiTurcan/project-book-rag" target="_blank"
-                            rel="noopener">
-                            Code
-                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M7 17 17 7M8 7h9v9" />
-                            </svg>
-                        </a>
-                    </article>
-
-                    <article class="pcard reveal">
+                <h3 class="subhead reveal" data-i18n="sub.ml">Machine Learning</h3>
+                <article class="pcard pcard--wide reveal">
+                    <div class="pcard__head">
                         <div class="pcard__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24">
                                 <path d="M3 3v18h18" />
@@ -669,6 +692,8 @@
                         </div>
                         <p class="tag" data-i18n="diabetes.tag">EDA · Classification</p>
                         <h4 class="pcard__title" data-i18n="diabetes.title">Diabetes Screening Model</h4>
+                    </div>
+                    <div class="pcard__main">
                         <p class="pcard__desc" data-i18n="diabetes.desc">
                             Hypothesis-driven EDA on the Pima Indians dataset, leak-free imputation of hidden
                             missing values, and a logistic regression tuned for recall. It catches
@@ -687,8 +712,8 @@
                                 <path d="M7 17 17 7M8 7h9v9" />
                             </svg>
                         </a>
-                    </article>
-                </div>
+                    </div>
+                </article>
 
                 <!-- Web grid -->
                 <h3 class="subhead reveal" data-i18n="sub.web">Web</h3>
