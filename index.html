@@ -3,358 +3,806 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio</title>
-    <link rel="stylesheet" href="iconfonts.css">
+    <title>Nicolai Turcan — Fullstack & AI Engineer</title>
+    <meta name="description"
+        content="Nicolai Turcan — Fullstack JavaScript/TypeScript developer with 4.5+ years of commercial experience, now building with machine learning, LLMs, RAG and AI agents.">
+    <meta property="og:title" content="Nicolai Turcan — Fullstack & AI Engineer">
+    <meta property="og:description"
+        content="4.5+ years of React & TypeScript in production. Now building with ML, LLMs, RAG and AI agents.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://nicolaiturcan.github.io/img/askforge.jpg">
+    <meta name="theme-color" content="#f6f6f3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0c0d0f" media="(prefers-color-scheme: dark)">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='28' fill='%2334d399'%3ENT%3C/text%3E%3C/svg%3E">
+
+    <!-- Apply saved / system theme before paint to avoid a flash -->
+    <script>
+        (function () {
+            document.documentElement.classList.add('js');
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { }
+            // Pick language early so the toggle renders in the right state
+            var lang = 'en';
+            try {
+                var q = new URLSearchParams(location.search).get('lang');
+                var saved = localStorage.getItem('lang');
+                if (q === 'en' || q === 'de') lang = q;
+                else if (saved === 'en' || saved === 'de') lang = saved;
+                else if ((navigator.language || '').toLowerCase().indexOf('de') === 0) lang = 'de';
+            } catch (e) { }
+            document.documentElement.setAttribute('lang', lang);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <div class="header__container">
-                <div class="menu__icon">
-                    <span></span>
-                </div>
-                <nav class="menu__body">
-                    <ul class="menu__list">
-                        <li><a data-goto=".page__section_1" href="#" class="menu__link">Home<span></span></a></li>
-                        <li><a data-goto=".page__section_2" href="#" class="menu__link">About Me<span></span></a></li>
-                        <li><a data-goto=".page__section_3" href="#" class="menu__link">Main Skills<span></span></a>
-                        </li>
-                        <li><a data-goto=".page__section_4" href="#" class="menu__link">Projects<span></span></a></li>
-                    </ul>
-                </nav>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="top">
+        <div class="container header__inner">
+            <a href="#top" class="logo" aria-label="Nicolai Turcan — home">
+                <span class="logo__mark">NT</span>
+                <span class="logo__name">Nicolai Turcan</span>
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Main">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a class="nav__link" href="#skills" data-i18n="nav.skills">Skills</a></li>
+                    <li><a class="nav__link" href="#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a class="nav__link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="lang-toggle" type="button" aria-label="Switch language (English / Deutsch)">
+                    <span class="lang-toggle__opt" data-lang="en">EN</span>
+                    <span class="lang-toggle__opt" data-lang="de">DE</span>
+                </button>
+                <button class="icon-btn theme-toggle" type="button" aria-label="Toggle color theme">
+                    <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                    </svg>
+                    <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+                    </svg>
+                </button>
+                <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav">
+                    <span class="menu-toggle__bars" aria-hidden="true"></span>
+                </button>
             </div>
-        </header>
-        <main class="content">
-            <section class="content__section page__section_1">
-                <div class="content__box">
-                    <article class="content__box_logo">
-                        <div class="logo"></div>
-                        <div class="logo_text">
-                            <p>Nicolai Turcan - Beginner JavaScript Developer - </p>
-                        </div>
-                    </article>
-                    <div class="content__text">
-                        <p>Hi, my name is</p>
-                        <h1 class="name">Nicolai Turcan.</h1> 
-                        <h1>I am learning to build things for the Web!</h1>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ============ HERO ============ -->
+        <section class="hero">
+            <div class="container hero__inner">
+                <div class="hero__text">
+                    <p class="status reveal">
+                        <span class="status__dot" aria-hidden="true"></span>
+                        <span data-i18n="hero.status">Open to Fullstack &amp; AI Engineering roles · Germany</span>
+                    </p>
+                    <h1 class="hero__title reveal" data-i18n="hero.title">
+                        I build web products —<br>
+                        <span class="accent-text">and now, intelligent systems.</span>
+                    </h1>
+                    <p class="hero__lead reveal" data-i18n="hero.lead">
+                        I'm Nicolai, a Fullstack developer with <strong>4.5+ years</strong> of commercial
+                        experience in React, TypeScript and Node.js. I'm currently completing a
+                        Data Science, Machine Learning &amp; AI Engineering bootcamp, working with
+                        LLMs, RAG pipelines and production-grade AI agents.
+                    </p>
+                    <div class="hero__cta reveal">
+                        <a href="#projects" class="btn btn--primary">
+                            <span data-i18n="hero.cta">View projects</span>
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 5v14M19 12l-7 7-7-7" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nicolai-turcan-a261a0217/" target="_blank"
+                            rel="noopener" class="btn btn--ghost">
+                            <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/NicolaiTurcan" target="_blank" rel="noopener"
+                            class="btn btn--ghost">
+                            <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3" />
+                            </svg>
+                            GitHub
+                        </a>
                     </div>
                 </div>
-                <nav class="content__nav">
-                    <a href="https://github.com/NicolaiTurcan" target="_blank" class="icon-git"></a>
-                    <a href="https://www.facebook.com/nicolai.turcan.77" target="_blank" class="icon-facebook"></a>
-                    <a href="https://t.me/joinchat/oqOhtw7D5gI3MGYy" target="_blank" class="icon-telegram"></a>
-                    <a href="https://www.linkedin.com/in/nicolai-turcan-a261a0217/" target="_blank"
-                        class="icon-linkedin"></a>
-                </nav>
-            </section>
-            <section class="content__section page__section_2">
-                <h1 class="content__header">About Me</h1>
-                <div class="content__box content__box_2">
-                    <div class="content__text content__text_2">
-                        <h2>Background</h2>
-                        <p>
-                            My name is Nicolai, I am a beginner FullStack JavaScript developer based in Germany and I enjoy creating things that live on the internet.
-                            My interest in web development started back in 2020 as a result of me watching some YouTube tutorials.
-                            In April 2021 I started studying web development at the Russian online university 
-                           <a href="https://gb.ru/" target="blanck"> GeekBrains</a>.
+
+                <figure class="hero__photo reveal">
+                    <img src="./img/nicolai.jpg" alt="Portrait of Nicolai Turcan" width="640" height="800">
+                    <figcaption class="hero__photo-tag">
+                        <span class="mono">~/nicolai</span>
+                        <span>Fullstack → AI Engineer</span>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="container">
+                <dl class="stats reveal">
+                    <div class="stats__item">
+                        <dt data-i18n="stats.exp.t">Commercial experience</dt>
+                        <dd data-i18n="stats.exp.v">4.5+ <span>years</span></dd>
+                    </div>
+                    <div class="stats__item">
+                        <dt data-i18n="stats.saas.t">SaaS built solo</dt>
+                        <dd data-i18n="stats.saas.v">1 <span>in production</span></dd>
+                    </div>
+                    <div class="stats__item">
+                        <dt data-i18n="stats.stack.t">Core stack</dt>
+                        <dd>TS <span>· React · Node</span></dd>
+                    </div>
+                    <div class="stats__item">
+                        <dt data-i18n="stats.boot.t">AI Engineering bootcamp</dt>
+                        <dd data-i18n="stats.boot.v">Jan <span>2027</span></dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ============ ABOUT ============ -->
+        <section class="section" id="about">
+            <div class="container">
+                <header class="section__head reveal">
+                    <p class="eyebrow" data-i18n="about.eyebrow">01 · About</p>
+                    <h2 class="section__title" data-i18n="about.title">From complex web apps to data-driven systems</h2>
+                </header>
+
+                <div class="about">
+                    <div class="about__text reveal">
+                        <p data-i18n="about.p1">
+                            I'm a Fullstack JavaScript developer based in Germany. Over the past 4.5+ years
+                            I've built complex web applications, contributed to SaaS products and shipped
+                            frontends where usability, maintainability and reliable workflows matter.
                         </p>
-                    </div>
-                    <div class="content__text content__text_2">
-                        <h2>Experience</h2>
-                        <p>
-                            I'm just starting my career as a web developer, and I'm looking for a first job in this field.
-                            I have already learned a lot of interesting things and technologies that I often use. 
-                            But there's still a lot of things that I have yet to learn.
+                        <p data-i18n="about.p2">
+                            From 2022 to 2026 I was a Software Developer at <strong>Inspire Technologies</strong>,
+                            where I made a major contribution to the low-code <strong>MR.KNOW</strong> platform:
+                            the ProcessBoard and a professional BPMN Editor (frontend &amp; KotlinJS), the
+                            interactive Process Map, a redesign of the Process Monitor, and refactoring of legacy
+                            JavaScript/jQuery code. That taught me to work with complex application logic and
+                            established codebases while continuously improving the product.
                         </p>
-                    </div>
-                    <div class="content__text content__text_2">
-                        <h2>Goals</h2>
-                        <p>
-                            My main goal is to successfully complete my studies and find my first job, 
-                            where I could quickly improve my skills on the real tasks.
+                        <p data-i18n="about.p3">
+                            On my own I designed and built <strong>AskForge</strong>, a SaaS platform, from
+                            the first idea to production: architecture, integrations, payments and a
+                            graph-based no-code logic builder.
                         </p>
+                        <p data-i18n="about.p4">
+                            Now I'm adding a second discipline: <strong>data science, machine learning and AI
+                                engineering</strong>. I enjoy taking ownership of technical decisions,
+                            collaborating across disciplines and building software that makes a measurable
+                            difference for its users.
+                        </p>
+                        <dl class="langs">
+                            <dt class="mono" data-i18n="langs.title">Languages</dt>
+                            <dd data-i18n="langs.list">Romanian (native) · English (B2) · German (B1) · Russian (very good)</dd>
+                        </dl>
                     </div>
+
+                    <ol class="timeline reveal" aria-label="Experience and education">
+                        <li class="timeline__item">
+                            <span class="timeline__when mono" data-i18n="tl1.when">2026 – Jan 2027</span>
+                            <h3 class="timeline__title" data-i18n="tl1.title">AI &amp; ML Engineering Bootcamp</h3>
+                            <p class="timeline__where" data-i18n="tl1.where">neue fische × SPICED</p>
+                            <p class="timeline__desc" data-i18n="tl1.desc">Statistics, classical ML, deep learning, NLP, LLMs, RAG
+                                and LangGraph agents. Up next: MCP, multi-agent systems, evals and AI safety.</p>
+                        </li>
+                        <li class="timeline__item">
+                            <span class="timeline__when mono" data-i18n="tl2.when">Founder</span>
+                            <h3 class="timeline__title" data-i18n="tl2.title">AskForge.org</h3>
+                            <p class="timeline__where" data-i18n="tl2.where">SaaS · built solo</p>
+                            <p class="timeline__desc" data-i18n="tl2.desc">Full-stack architecture with React, TypeScript, Node.js,
+                                Express and Prisma; Stripe and Google Cloud Vision; React Flow logic builder.</p>
+                        </li>
+                        <li class="timeline__item">
+                            <span class="timeline__when mono" data-i18n="tl3.when">02/2022 – 08/2026</span>
+                            <h3 class="timeline__title" data-i18n="tl3.title">Inspire Technologies GmbH</h3>
+                            <p class="timeline__where" data-i18n="tl3.where">Software Developer · St. Georgen</p>
+                            <p class="timeline__desc" data-i18n="tl3.desc">MR.KNOW low-code platform: BPMN ProcessBoard &amp;
+                                Editor, interactive Process Map (KotlinJS), Process Monitor redesign, legacy jQuery
+                                refactoring.</p>
+                        </li>
+                        <li class="timeline__item">
+                            <span class="timeline__when mono" data-i18n="tl4.when">2021 – 2022</span>
+                            <h3 class="timeline__title" data-i18n="tl4.title">Fullstack JavaScript</h3>
+                            <p class="timeline__where" data-i18n="tl4.where">GeekBrains online university</p>
+                            <p class="timeline__desc" data-i18n="tl4.desc">Where it all started: JavaScript, Vue, React, Node.js,
+                                Linux and Git.</p>
+                        </li>
+                    </ol>
                 </div>
-            </section>
-            <section class="content__section page__section_3">
-                <h1 class="content__header">Main Skills</h1>
-                <div class="content__box content__box_3">
-                    <div class="content__box_slider">
-                        <div class="content__box_3-card">
-                            <div class="card__logo">
-                                <span class="logo icon-html5"></span>
-                                <h3 class="card__logo_name">HTML5</h3>
-                            </div>
-                            <div class="card__content">
-                                <div class="card_text">
-                                    <p class="card_text_el">HTML5 Structure</p>
-                                    <p class="card_text_el">Basic layout tags, pseudo-classes and pseudo-elements</p>
-                                    <p class="card_text_el">Basics of SEO</p>
-                                    <p class="card_text_el">BEM Principles</p>
-                                    <p class="card_text_el">Bootstrap</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content__box_3-card">
-                            <div class="card__logo">
-                                <span class="logo icon-css3"></span>
-                                <h3 class="card__logo_name">CSS3</h3>
-                            </div>
-                            <div class="card__content">
-                                <div class="card_text">
-                                    <p class="card_text_el">Sass Preprocessor</p>
-                                    <p class="card_text_el">Media queries, responsive layout.</p>
-                                    <p class="card_text_el">Transition and Transform Effects</p>
-                                    <p class="card_text_el">Flex/Grid</p>
-                                    <p class="card_text_el">Figma</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content__box_3-card">
-                            <div class="card__logo">
-                                <span class="logo icon-git"></span>
-                                <h3 class="card__logo_name">Git</h3>
-                            </div>
-                            <div class="card__content">
-                                <div class="card_text">
-                                    <p class="card_text_el">Installing and configuring Git</p>
-                                    <p class="card_text_el">Basic terminal commands</p>
-                                    <p class="card_text_el">Working with repositories in Git</p>
-                                    <p class="card_text_el">Working with repository branches</p>
-                                    <p class="card_text_el">Publishing a repository</p>
-                                    <p class="card_text_el">Version control</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content__box_3-card">
-                            <div class="card__logo">
-                                <span class="logo icon-js"></span>
-                                <h3 class="card__logo_name">JavaScript</h3>
-                            </div>
-                            <div class="card__content">
-                                <div class="card_text">
-                                    <p class="card_text_el">Loops, arrays, data structures</p>
-                                    <p class="card_text_el">Objects in JavaScript</p>
-                                    <p class="card_text_el">Introduction to the DOM</p>
-                                    <p class="card_text_el">Event handling in JavaScript</p>
-                                    <p class="card_text_el">Anonymous functions, closures</p>
-                                    <p class="card_text_el">OOP in JavaScript</p>
-                                    <p class="card_text_el">Asynchronous requests</p>
-                                    <p class="card_text_el">Regular Expressions</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content__box_3-card">
-                            <div class="card__logo">
-                                <span class="logo icon-vuejs"></span>
-                                <h3 class="card__logo_name">Vue</h3>
-                            </div>
-                            <div class="card__content">
-                                <div class="card_text">
-                                    <p class="card_text_el">VueJS Basics</p>
-                                    <p class="card_text_el">VueJS Components</p>
-                                    <p class="card_text_el">Vue CLI</p>
-                                    <p class="card_text_el">Vuex</p>
-                                    <p class="card_text_el">Vue Router</p>
-                                    <p class="card_text_el">Axios</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content__box_3-card">
-                            <div class="card__logo">
-                                <span class="logo icon-reactjs"></span>
-                                <h3 class="card__logo_name">ReactJS</h3>
-                            </div>
-                            <div class="card__content">
-                                <div class="card_text">
-                                    <p class="card_text_el">Component life cycle</p>
-                                    <p class="card_text_el">Virtual DOM. Material UI. PropTypes</p>
-                                    <p class="card_text_el">Children. Routing in React</p>
-                                    <p class="card_text_el">Introducing Redux</p>
-                                    <p class="card_text_el">Redux middlewares. Redux-persist</p>
-                                    <p class="card_text_el">Working with the API</p>
-                                    <p class="card_text_el">Introducing Firebase</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content__box_3-card">
-                            <div class="card__logo">
-                                <span class="logo icon-linux"></span>
-                                <h3 class="card__logo_name">Linux</h3>
-                            </div>
-                            <div class="card__content">
-                                <div class="card_text">
-                                    <p class="card_text_el">Configuring and familiarizing with the command line interface</p>
-                                    <p class="card_text_el">User and group management</p>
-                                    <p class="card_text_el">OS loading and processes</p>
-                                    <p class="card_text_el">File and directory concepts</p>
-                                    <p class="card_text_el">An introduction to Bash scripting. Crontab task schedulers</p>
-                                    <p class="card_text_el">Introduction to Docker</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content__box_3-card">
-                            <div class="card__logo">
-                                <span class="logo icon-nodejs"></span>
-                                <h3 class="card__logo_name">NodeJS</h3>
-                            </div>
-                            <div class="card__content">
-                                <div class="card_text">
-                                    <p class="card_text_el">Dependency management</p>
-                                    <p class="card_text_el">Cycle of events. Events in Node.js</p>
-                                    <p class="card_text_el">Working with the file system. Buffer class. Streams module</p>
-                                    <p class="card_text_el">CLI applications</p>
-                                    <p class="card_text_el">Node.js HTTP server</p>
-                                    <p class="card_text_el">Socket.io library. Workers in Node.js</p>
-                                </div>
-                            </div>
+            </div>
+        </section>
+
+        <!-- ============ SKILLS ============ -->
+        <section class="section section--alt" id="skills">
+            <div class="container">
+                <header class="section__head reveal">
+                    <p class="eyebrow" data-i18n="skills.eyebrow">02 · Skills</p>
+                    <h2 class="section__title" data-i18n="skills.title">Two tracks, one engineer</h2>
+                    <p class="section__lead" data-i18n="skills.lead">A solid foundation in web engineering, and a growing toolkit for
+                        data, machine learning and AI agents.</p>
+                </header>
+
+                <!-- Track 1: Web -->
+                <div class="track reveal">
+                    <div class="track__head">
+                        <span class="track__num mono">A</span>
+                        <div>
+                            <h3 class="track__title" data-i18n="trackA.title">Web Engineering</h3>
+                            <p class="track__meta mono" data-i18n="trackA.meta">4.5+ years · commercial</p>
                         </div>
                     </div>
-                    <span class="icon-right"></span>
-                    <span class="icon-left"></span>
-                </div>
-                <h2 class="contetnt__header-bottom">Skills that I plan to acquire</h2>
-                <div class="content__box_feature">
-                    <div class="card_logo">
-                        <span class="icon-database"></span>
-                        <h3 class="card__logo_name">Database</h3>
-                    </div>
-                    <div class="card_logo">
-                        <span class="icon-http"></span>
-                        <h3 class="card__logo_name">Network Protocol</h3>
-                    </div>
-                    <div class="card_logo">
-                        <span class="icon-typescript"></span>
-                        <h3 class="card__logo_name">TypeScript</h3>
-                    </div>
-                    <div class="card_logo">
-                        <span class="icon-nestjs"></span>
-                        <h3 class="card__logo_name">NestJS</h3>
-                    </div>
-                    <div class="card_logo">
-                        <span class="icon-scrum"></span>
-                        <h3 class="card__logo_name">Agile/Scrum</h3>
-                    </div>
-                    <div class="card_logo">
-                        <span class="icon-electronjs"></span>
-                        <h3 class="card__logo_name">ElectronJS</h3>
-                    </div>
-                    <div class="card_logo">
-                        <span class="icon-reactjs"></span>
-                        <h3 class="card__logo_name">React Native</h3>
-                    </div>
-                </div>
-            </section>
-            <section class="content__section page__section_4">
-                <h1 class="content__header">Some Things I’ve Built</h1>
-                <div class="content__projectsBox">
-                    <article class="project__card">
-                        <div class="project__img">
-                            <a href="https://movieappnt.netlify.app/" target="_blank">
-                                <img src="./img/movieapp_screen.jpg" alt="Vue Movie App">
-                            </a>
-                        </div>
-                        <div class="project__content project__content-right">
-                            <h3 class="projetct__title"> Build a Top 250 Movies App</h3>
-                            <div class="project__description">
-                                <p>
-                                    A web app for visualizing top 250 movies from IMDb, allows you to get information about the movie.
-                                    Also you can remove any movie from this list and search for any movie by title.
-                                </p> 
-                            </div>
-                            <ul class="project__texList">
-                                <li>Vue CLI</li>
-                                <li>VueX</li>
-                                <li>vue-router</li>
-                                <li>axios</li>
-                                <li>bootstrap-vue</li>
+
+                    <div class="bento bento--web">
+                        <article class="card">
+                            <h4 class="card__title" data-i18n="cardA1">Frontend</h4>
+                            <ul class="chips">
+                                <li>React</li>
+                                <li>TypeScript</li>
+                                <li>JavaScript (ES2023)</li>
+                                <li>KotlinJS</li>
+                                <li>Vue.js · Vuex</li>
+                                <li>Zustand · Redux</li>
+                                <li>React Flow</li>
+                                <li>Recharts</li>
+                                <li>HTML5 · CSS3 · SCSS</li>
+                                <li>Responsive UI</li>
+                                <li>jQuery (legacy refactoring)</li>
                             </ul>
-                            <div class="project__links">
-                                <a href="https://github.com/NicolaiTurcan/Vue_Practic" target="_blank" class="icon-git"></a>
-                                <a href="https://movieappnt.netlify.app/" target="_blank" class="icon-external-link"></a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project__card left_card">
-                        <div class="project__img">
-                            <a href="https://react-chatnt.netlify.app/" target="_blank">
-                                <img src="./img/chatapp_screen.jpg" alt="React Chat App">
-                            </a>
-                        </div>
-                        <div class="project__content project__content-left">
-                            <h3 class="projetct__title"> Simple Chat App</h3>
-                            <div class="project__description">
-                                <p>
-                                    A web app I created in React, a small chat with authentication. My first steps with Firebase 
-                                    and React frameworks.
-                                </p> 
-                            </div>
-                            <ul class="project__texList project__texList-left">
-                                <li>Create React App</li>
-                                <li>React-Router-DOM</li>
-                                <li>Redux</li>
-                                <li>Redux-Persist</li>
-                                <li>Redux-Thunk</li>
-                                <li>Material-UI</li>
+                        </article>
+                        <article class="card">
+                            <h4 class="card__title" data-i18n="cardA2">Backend &amp; Data</h4>
+                            <ul class="chips">
+                                <li>Node.js</li>
+                                <li>Express</li>
+                                <li>NestJS</li>
+                                <li>Prisma ORM</li>
+                                <li>SQL databases</li>
+                                <li>REST APIs</li>
+                                <li>HTTP &amp; network protocols</li>
+                                <li>Socket.io</li>
                             </ul>
-                            <div class="project__links">
-                                <a href="https://github.com/NicolaiTurcan/ReactJS/tree/master/lesson1_app" target="_blank" class="icon-git"></a>
-                                <a href="https://react-chatnt.netlify.app/" target="_blank" class="icon-external-link"></a>
-                            </div>
+                        </article>
+                        <article class="card">
+                            <h4 class="card__title" data-i18n="cardA3">Integrations</h4>
+                            <ul class="chips">
+                                <li>Stripe</li>
+                                <li>Google Cloud Vision</li>
+                                <li>Passport.js (OAuth)</li>
+                                <li>Node-cron</li>
+                                <li>Firebase</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h4 class="card__title" data-i18n="cardA4">Tooling &amp; Process</h4>
+                            <ul class="chips">
+                                <li>Git · GitHub</li>
+                                <li>Vite</li>
+                                <li>Linux · Bash</li>
+                                <li>Docker</li>
+                                <li>Agile / Scrum</li>
+                                <li>Figma</li>
+                                <li>Code reviews</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <p class="next-up">
+                        <span class="mono" data-i18n="skills.next">Next on my list:</span>
+                        <span class="chip-inline">ElectronJS</span>
+                        <span class="chip-inline">React Native</span>
+                    </p>
+                </div>
+
+                <!-- Track 2: AI -->
+                <div class="track reveal">
+                    <div class="track__head">
+                        <span class="track__num mono">B</span>
+                        <div>
+                            <h3 class="track__title" data-i18n="trackB.title">Data Science · ML · AI Engineering</h3>
+                            <p class="track__meta mono" data-i18n="trackB.meta">Bootcamp · 2026 – Jan 2027</p>
                         </div>
-                    </article>
-                    <article class="project__card">
-                        <div class="project__img">
-                            <a href="https://nicolaiturcan.github.io/NewYear.github.io/" target="_blank">
-                                <img src="./img/new_year_screen.jpg" alt="Vue Movie App">
+                    </div>
+
+                    <div class="bento bento--ai">
+                        <article class="card">
+                            <h4 class="card__title" data-i18n="cardB1">Python &amp; Data</h4>
+                            <ul class="chips">
+                                <li>Python</li>
+                                <li>pandas</li>
+                                <li>NumPy</li>
+                                <li>SQL · SQLite</li>
+                                <li>Jupyter</li>
+                                <li>uv</li>
+                                <li>Matplotlib · Seaborn</li>
+                                <li>Plotly</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h4 class="card__title" data-i18n="cardB2">Statistics</h4>
+                            <ul class="chips">
+                                <li>SciPy</li>
+                                <li>statsmodels</li>
+                                <li>Hypothesis testing</li>
+                                <li>Confidence intervals</li>
+                                <li>Effect sizes</li>
+                                <li>EDA</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h4 class="card__title" data-i18n="cardB3">Machine Learning</h4>
+                            <ul class="chips">
+                                <li>scikit-learn</li>
+                                <li>Pipelines · ColumnTransformer</li>
+                                <li>Cross-validation</li>
+                                <li>XGBoost</li>
+                                <li>LightGBM</li>
+                                <li>CatBoost</li>
+                                <li>Optuna</li>
+                                <li>SHAP</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h4 class="card__title" data-i18n="cardB4">Deep Learning &amp; NLP</h4>
+                            <ul class="chips">
+                                <li>Keras</li>
+                                <li>CNNs</li>
+                                <li>Transfer learning</li>
+                                <li>TF-IDF · word2vec</li>
+                                <li>sentence-transformers</li>
+                                <li>UMAP · HDBSCAN</li>
+                                <li>BERTopic</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h4 class="card__title" data-i18n="cardB5">LLMs &amp; RAG</h4>
+                            <ul class="chips">
+                                <li>LangChain (LCEL)</li>
+                                <li>Chroma</li>
+                                <li>Embeddings</li>
+                                <li>Anthropic API</li>
+                                <li>Groq</li>
+                                <li>Tool calling</li>
+                                <li>Structured outputs</li>
+                            </ul>
+                        </article>
+                        <article class="card card--highlight">
+                            <h4 class="card__title" data-i18n="cardB6">AI Agents in Production</h4>
+                            <ul class="chips">
+                                <li>LangGraph</li>
+                                <li>ReAct agents</li>
+                                <li>Human-in-the-loop</li>
+                                <li>Checkpointing · resume</li>
+                                <li>Idempotency</li>
+                                <li>OpenTelemetry</li>
+                                <li>JSONL telemetry</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="upcoming">
+                        <div class="upcoming__head">
+                            <span class="upcoming__badge mono" data-i18n="upcoming.badge">Coming up · weeks 9–11</span>
+                            <p class="upcoming__text" data-i18n="upcoming.text">What I'm learning next in the bootcamp,
+                                before January 2027:</p>
+                        </div>
+                        <ul class="chips chips--upcoming">
+                            <li>Agentic RAG</li>
+                            <li>Agent memory</li>
+                            <li>MCP · FastMCP</li>
+                            <li>Pydantic AI</li>
+                            <li>Multi-agent orchestration</li>
+                            <li>Cost &amp; latency engineering</li>
+                            <li>deepeval · LLM-as-judge</li>
+                            <li>Prompt-injection defense</li>
+                            <li>EU AI Act</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROJECTS ============ -->
+        <section class="section" id="projects">
+            <div class="container">
+                <header class="section__head reveal">
+                    <p class="eyebrow" data-i18n="projects.eyebrow">03 · Projects</p>
+                    <h2 class="section__title" data-i18n="projects.title">Selected work</h2>
+                </header>
+
+                <!-- Featured: AskForge -->
+                <article class="feature reveal">
+                    <a class="feature__media" href="https://www.askforge.org/" target="_blank" rel="noopener"
+                        tabindex="-1">
+                        <img src="./img/askforge.jpg" alt="AskForge landing page" width="1200" height="750"
+                            loading="lazy">
+                    </a>
+                    <div class="feature__body">
+                        <p class="tag" data-i18n="askforge.tag">Featured · SaaS · Solo founder</p>
+                        <h3 class="feature__title">AskForge</h3>
+                        <p class="feature__desc" data-i18n="askforge.desc">
+                            Turns boring forms into conversations people finish. Upload a PDF, Word file or a
+                            photo of a questionnaire, and AskForge rebuilds it as a friendly chat survey,
+                            or you can start from scratch in a visual editor. Surveys are shared by link or QR code,
+                            and responses can be exported.
+                        </p>
+                        <ul class="feature__points">
+                            <li data-i18n="askforge.pt1">Full-stack architecture designed and built solo, from concept to production</li>
+                            <li data-i18n="askforge.pt2">Graph-based <strong>no-code logic builder</strong> with React Flow for branching
+                                surveys</li>
+                            <li data-i18n="askforge.pt3">Document recognition with <strong>Google Cloud Vision</strong>, subscriptions with
+                                <strong>Stripe</strong>
+                            </li>
+                        </ul>
+                        <ul class="stack">
+                            <li>React</li>
+                            <li>TypeScript</li>
+                            <li>Node.js</li>
+                            <li>Express</li>
+                            <li>Prisma</li>
+                            <li>React Flow</li>
+                            <li>Stripe</li>
+                            <li>Cloud Vision</li>
+                        </ul>
+                        <div class="links">
+                            <a class="link" href="https://www.askforge.org/" target="_blank" rel="noopener">
+                                <span data-i18n="askforge.link">Visit askforge.org</span>
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
                             </a>
                         </div>
-                        <div class="project__content project__content-right">
-                            <h3 class="projetct__title">New Year Timer</h3>
-                            <div class="project__description">
-                                <p>
-                                    A simple landing that I made just for fun,
-                                     that reminds me and all my friends how close the New Year's event is.
-                                </p> 
-                            </div>
-                            <ul class="project__texList">
+                    </div>
+                </article>
+
+                <!-- Featured: ScoutBot -->
+                <article class="feature feature--reverse reveal">
+                    <div class="feature__media feature__media--diagram"
+                        aria-label="Diagram of the ScoutBot ticket workflow" role="img">
+                        <svg class="flow" viewBox="0 0 560 350" aria-hidden="true">
+                            <defs>
+                                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7"
+                                    markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0 0 10 5 0 10z" class="flow__arrowhead" />
+                                </marker>
+                            </defs>
+                            <!-- edges -->
+                            <path class="flow__edge" d="M100 70 H150" marker-end="url(#arrow)" />
+                            <path class="flow__edge" d="M330 70 H370" marker-end="url(#arrow)" />
+                            <path class="flow__edge" d="M460 98 V150 H380 V190" marker-end="url(#arrow)" />
+                            <path class="flow__edge" d="M460 98 V150 H180 V190" marker-end="url(#arrow)" />
+                            <path class="flow__edge" d="M180 246 V282" marker-end="url(#arrow)" />
+                            <path class="flow__edge" d="M380 246 V282" marker-end="url(#arrow)" />
+                            <!-- labels on branch -->
+                            <text class="flow__label" x="222" y="142">priority low / medium</text>
+                            <text class="flow__label" x="392" y="178">priority high</text>
+                            <!-- nodes -->
+                            <g class="flow__node flow__node--term">
+                                <rect x="20" y="48" width="80" height="44" rx="22" />
+                                <text x="60" y="75">START</text>
+                            </g>
+                            <g class="flow__node">
+                                <rect x="150" y="42" width="180" height="56" rx="12" />
+                                <text x="240" y="67">look_up_customer</text>
+                                <text class="flow__sub" x="240" y="85">mock CRM</text>
+                            </g>
+                            <g class="flow__node flow__node--model">
+                                <rect x="370" y="42" width="170" height="56" rx="12" />
+                                <text x="455" y="67">triage_ticket</text>
+                                <text class="flow__sub" x="455" y="85">LLM · Pydantic schema</text>
+                            </g>
+                            <g class="flow__node">
+                                <rect x="90" y="190" width="180" height="56" rx="12" />
+                                <text x="180" y="215">auto_resolve</text>
+                                <text class="flow__sub" x="180" y="233">handled automatically</text>
+                            </g>
+                            <g class="flow__node flow__node--human">
+                                <rect x="290" y="190" width="180" height="56" rx="12" />
+                                <text x="380" y="215">escalate_ticket</text>
+                                <text class="flow__sub" x="380" y="233">interrupt() → human</text>
+                            </g>
+                            <g class="flow__node flow__node--term">
+                                <rect x="140" y="282" width="80" height="44" rx="22" />
+                                <text x="180" y="309">END</text>
+                            </g>
+                            <g class="flow__node flow__node--term">
+                                <rect x="340" y="282" width="80" height="44" rx="22" />
+                                <text x="380" y="309">END</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="feature__body">
+                        <p class="tag" data-i18n="scout.tag">AI Agent · In active development</p>
+                        <h3 class="feature__title">ScoutBot</h3>
+                        <p class="feature__desc" data-i18n="scout.desc">
+                            A support-ticket assistant for a fictional SaaS company. It reads an incoming ticket,
+                            looks up the customer's account, classifies the ticket and either resolves it
+                            automatically or hands it to a human for a decision.
+                        </p>
+                        <ul class="feature__points">
+                            <li data-i18n="scout.pt1"><strong>LangGraph workflow</strong> with conditional routing, checkpointing and
+                                <code>interrupt()</code> pause/resume, so a paused run continues even from another process
+                            </li>
+                            <li data-i18n="scout.pt2">Bounded <strong>ReAct agent loop</strong> with a step cap, human approval gate and
+                                guarded <code>web_fetch</code> / <code>code_execution</code> server tools</li>
+                            <li data-i18n="scout.pt3">Schema-validated triage with retries, JSONL step telemetry, OpenTelemetry traces in
+                                Jaeger, offline test suite</li>
+                        </ul>
+                        <ul class="stack">
+                            <li>Python</li>
+                            <li>Anthropic SDK</li>
+                            <li>LangGraph</li>
+                            <li>Pydantic</li>
+                            <li>OpenTelemetry</li>
+                            <li>pytest</li>
+                            <li>uv</li>
+                        </ul>
+                        <div class="links">
+                            <a class="link" href="https://github.com/NicolaiTurcan/Scout_Bot" target="_blank"
+                                rel="noopener">
+                                <span data-i18n="scout.link">View on GitHub</span>
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ML grid -->
+                <h3 class="subhead reveal" data-i18n="sub.ml">Machine Learning &amp; LLMs</h3>
+                <div class="grid grid--3">
+                    <article class="pcard reveal">
+                        <div class="pcard__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z" />
+                                <path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5" />
+                                <path d="M9 8h7M9 12h5" />
+                            </svg>
+                        </div>
+                        <p class="tag" data-i18n="rag.tag">RAG · NLP</p>
+                        <h4 class="pcard__title" data-i18n="rag.title">Book Q&amp;A with RAG</h4>
+                        <p class="pcard__desc" data-i18n="rag.desc">
+                            Answers questions about a full-length Project Gutenberg book using only
+                            retrieved passages, and shows the passages each answer is based on.
+                            Includes a command-line tool.
+                        </p>
+                        <ul class="stack stack--sm">
+                            <li>LangChain LCEL</li>
+                            <li>Chroma</li>
+                            <li>Groq</li>
+                            <li>Regex</li>
+                        </ul>
+                        <a class="link" href="https://github.com/NicolaiTurcan/project-book-rag" target="_blank"
+                            rel="noopener">
+                            Code
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 17 17 7M8 7h9v9" />
+                            </svg>
+                        </a>
+                    </article>
+
+                    <article class="pcard reveal">
+                        <div class="pcard__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M12 9c0-3 1.5-5 3-6 1 2 1 4.5-1 6.5M15 12c3 0 5 1.5 6 3-2 1-4.5 1-6.5-1M12 15c0 3-1.5 5-3 6-1-2-1-4.5 1-6.5M9 12c-3 0-5-1.5-6-3 2-1 4.5-1 6.5 1" />
+                            </svg>
+                        </div>
+                        <p class="tag" data-i18n="flowers.tag">Computer Vision</p>
+                        <h4 class="pcard__title" data-i18n="flowers.title">Flower Classification</h4>
+                        <p class="pcard__desc" data-i18n="flowers.desc">
+                            Classifies roses, sunflowers and tulips with only 100 training photos per class, using
+                            a frozen pretrained CNN with a dense head and data augmentation. Comes with a Streamlit app.
+                        </p>
+                        <ul class="stack stack--sm">
+                            <li>Keras</li>
+                            <li>Transfer learning</li>
+                            <li>Augmentation</li>
+                            <li>Streamlit</li>
+                        </ul>
+                        <!-- TODO: replace with a link once the work is pushed to
+                             https://github.com/NicolaiTurcan/amle-project-flowers -->
+                        <span class="soon mono" data-i18n="flowers.soon">Code coming soon</span>
+                    </article>
+
+                    <article class="pcard reveal">
+                        <div class="pcard__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 3v18h18" />
+                                <path d="M7 15l4-4 3 3 5-6" />
+                            </svg>
+                        </div>
+                        <p class="tag" data-i18n="diabetes.tag">EDA · Classification</p>
+                        <h4 class="pcard__title" data-i18n="diabetes.title">Diabetes Screening Model</h4>
+                        <p class="pcard__desc" data-i18n="diabetes.desc">
+                            Hypothesis-driven EDA on the Pima Indians dataset, leak-free imputation of hidden
+                            missing values, and a logistic regression tuned for recall. It catches
+                            <strong>80% of diabetes cases</strong> on the test set, against 50% for the untuned model.
+                        </p>
+                        <ul class="stack stack--sm">
+                            <li>pandas</li>
+                            <li>SciPy</li>
+                            <li>scikit-learn</li>
+                            <li>Seaborn</li>
+                        </ul>
+                        <a class="link" href="https://github.com/NicolaiTurcan/first_amle_project_diabetes"
+                            target="_blank" rel="noopener">
+                            Code
+                            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 17 17 7M8 7h9v9" />
+                            </svg>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Web grid -->
+                <h3 class="subhead reveal" data-i18n="sub.web">Web</h3>
+                <div class="grid grid--2">
+                    <article class="pcard pcard--media reveal">
+                        <a class="pcard__media" href="https://nicolaiturcan.github.io/ManifatturePico.github.io/"
+                            target="_blank" rel="noopener" tabindex="-1">
+                            <img src="./img/manifatture-pico.jpg" alt="ManifatturePico landing page" width="1200"
+                                height="750" loading="lazy">
+                        </a>
+                        <div class="pcard__body">
+                            <p class="tag" data-i18n="pico.tag">Landing page · Client work</p>
+                            <h4 class="pcard__title" data-i18n="pico.title">ManifatturePico</h4>
+                            <p class="pcard__desc" data-i18n="pico.desc">
+                                A bilingual (EN/IT) landing page for an Italian leathersmith workshop with
+                                20+ years of handcrafting bags, wallets and belts.
+                            </p>
+                            <ul class="stack stack--sm">
                                 <li>HTML</li>
                                 <li>CSS</li>
                                 <li>JavaScript</li>
+                                <li>i18n</li>
                             </ul>
-                            <div class="project__links">
-                                <a href="https://github.com/NicolaiTurcan/NewYear.github.io" target="_blank" class="icon-git"></a>
-                                <a href="https://nicolaiturcan.github.io/NewYear.github.io/" target="_blank" class="icon-external-link"></a>
+                            <div class="links">
+                                <a class="link" href="https://nicolaiturcan.github.io/ManifatturePico.github.io/"
+                                    target="_blank" rel="noopener">
+                                    Live
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </a>
+                                <a class="link" href="https://github.com/NicolaiTurcan/ManifatturePico.github.io"
+                                    target="_blank" rel="noopener">
+                                    Code
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pcard pcard--media reveal">
+                        <a class="pcard__media" href="https://movieappnt.netlify.app/" target="_blank" rel="noopener"
+                            tabindex="-1">
+                            <img src="./img/movie-app.jpg" alt="Top 250 Movies app" width="1200" height="750"
+                                loading="lazy">
+                        </a>
+                        <div class="pcard__body">
+                            <p class="tag" data-i18n="movie.tag">Vue SPA · 2021</p>
+                            <h4 class="pcard__title" data-i18n="movie.title">Top 250 Movies</h4>
+                            <p class="pcard__desc" data-i18n="movie.desc">
+                                An app for browsing IMDb's top 250 movies, with movie details, search by title
+                                and list management. One of my early Vue projects.
+                            </p>
+                            <ul class="stack stack--sm">
+                                <li>Vue</li>
+                                <li>Vuex</li>
+                                <li>Vue Router</li>
+                                <li>Axios</li>
+                            </ul>
+                            <div class="links">
+                                <a class="link" href="https://movieappnt.netlify.app/" target="_blank"
+                                    rel="noopener">
+                                    Live
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </a>
+                                <a class="link" href="https://github.com/NicolaiTurcan/Vue_Practic" target="_blank"
+                                    rel="noopener">
+                                    Code
+                                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </article>
                 </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="footer__container">
-                <div class="footer__container_text">
-                    <p>Designed & Built by Nicolai Turcan</p>
-                </div>
-                <nav class="content__nav">
-                    <a href="https://github.com/NicolaiTurcan" target="_blank" class="icon-git"></a>
-                    <a href="https://www.facebook.com/nicolai.turcan.77" target="_blank" class="icon-facebook"></a>
-                    <a href="https://t.me/joinchat/oqOhtw7D5gI3MGYy" target="_blank" class="icon-telegram"></a>
-                    <a href="https://www.linkedin.com/in/nicolai-turcan-a261a0217/" target="_blank"
-                        class="icon-linkedin"></a>
-                </nav>
             </div>
-        </footer>
-    </div>
+        </section>
 
+        <!-- ============ CONTACT ============ -->
+        <section class="section section--alt" id="contact">
+            <div class="container">
+                <div class="contact reveal">
+                    <p class="eyebrow" data-i18n="contact.eyebrow">04 · Contact</p>
+                    <h2 class="contact__title" data-i18n="contact.title">Let's build something useful together.</h2>
+                    <p class="contact__lead" data-i18n="contact.lead">
+                        I'm open to Fullstack, Frontend and AI Engineering roles. The fastest way to reach me is
+                        LinkedIn.
+                    </p>
+                    <div class="hero__cta contact__cta">
+                        <a href="https://www.linkedin.com/in/nicolai-turcan-a261a0217/" target="_blank"
+                            rel="noopener" class="btn btn--primary">
+                            <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                            </svg>
+                            <span data-i18n="contact.cta">Connect on LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/NicolaiTurcan" target="_blank" rel="noopener"
+                            class="btn btn--ghost">
+                            <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p>© <span id="year">2026</span> <span data-i18n="footer.text">Nicolai Turcan · Designed &amp; built by me</span></p>
+            <nav class="footer__social" aria-label="Social">
+                <a href="https://github.com/NicolaiTurcan" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/nicolai-turcan-a261a0217/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn">
+                    <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="./i18n.js"></script>
     <script src="./script.js"></script>
-    <script src="./circle_text.js"></script>
-    <script src="./caroucel.js"></script>
 </body>
 
 </html>

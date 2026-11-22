@@ -1,0 +1,105 @@
+"use strict";
+/*
+ * Translations. English lives in index.html itself (it is read from the DOM on load),
+ * so only the other languages are defined here. A key missing here falls back to English.
+ * Values are HTML: <strong>, <br>, <code> and <span> are allowed.
+ */
+window.I18N = {
+    de: {
+        "meta.title": "Nicolai Turcan — Fullstack & AI Engineer",
+        "meta.description": "Nicolai Turcan — Fullstack-Entwickler (JavaScript/TypeScript) mit über 4,5 Jahren Berufserfahrung, jetzt mit Machine Learning, LLMs, RAG und KI-Agenten.",
+        "ui.theme": "Farbschema wechseln",
+        "ui.menuOpen": "Menü öffnen",
+        "ui.menuClose": "Menü schließen",
+        "ui.photo": "Porträt von Nicolai Turcan",
+
+        "skip": "Zum Inhalt springen",
+        "nav.about": "Über mich",
+        "nav.skills": "Skills",
+        "nav.projects": "Projekte",
+        "nav.contact": "Kontakt",
+
+        // Hero
+        "hero.status": "Offen für Fullstack- &amp; AI-Engineering-Rollen · Deutschland",
+        "hero.title": "Ich entwickle Webprodukte —<br><span class=\"accent-text\">und jetzt auch intelligente Systeme.</span>",
+        "hero.lead": "Ich bin Nicolai, Fullstack-Entwickler mit <strong>über 4,5 Jahren</strong> Berufserfahrung mit React, TypeScript und Node.js. Derzeit absolviere ich ein Bootcamp in Data Science, Machine Learning &amp; AI Engineering und arbeite mit LLMs, RAG-Pipelines und produktionsreifen KI-Agenten.",
+        "hero.cta": "Projekte ansehen",
+        "stats.exp.t": "Berufserfahrung",
+        "stats.exp.v": "4,5+ <span>Jahre</span>",
+        "stats.saas.t": "SaaS allein entwickelt",
+        "stats.saas.v": "1 <span>live im Einsatz</span>",
+        "stats.stack.t": "Kern-Stack",
+        "stats.boot.t": "AI-Engineering-Bootcamp",
+        "stats.boot.v": "Jan. <span>2027</span>",
+
+        // About
+        "about.eyebrow": "01 · Über mich",
+        "about.title": "Von komplexen Webanwendungen zu datengetriebenen Systemen",
+        "about.p1": "Ich bin Fullstack-JavaScript-Entwickler mit Sitz in Deutschland. In den letzten 4,5+ Jahren habe ich komplexe Webanwendungen entwickelt, an SaaS-Produkten mitgearbeitet und Frontends gebaut, bei denen Usability, Wartbarkeit und zuverlässige Workflows entscheidend sind.",
+        "about.p2": "Von 2022 bis 2026 war ich Softwareentwickler bei <strong>Inspire Technologies</strong> und habe maßgeblich an der Low-Code-Plattform <strong>MR.KNOW</strong> mitgewirkt: das ProcessBoard und ein professioneller BPMN-Editor (Frontend &amp; KotlinJS), die interaktive Prozesslandkarte, das Redesign des Prozessmonitors sowie das Refactoring von Legacy-JavaScript/jQuery-Code. Dabei habe ich gelernt, mit komplexer Anwendungslogik und gewachsenen Codebasen zu arbeiten und das Produkt kontinuierlich zu verbessern.",
+        "langs.title": "Sprachen",
+        "langs.list": "Rumänisch (Muttersprache) · Englisch (B2) · Deutsch (B1) · Russisch (sehr gut)",
+        "about.p3": "Eigenständig habe ich <strong>AskForge</strong> konzipiert und entwickelt – eine SaaS-Plattform von der ersten Idee bis zum Produktivbetrieb: Architektur, Integrationen, Zahlungsabwicklung und ein graphbasierter No-Code-Logic-Builder.",
+        "about.p4": "Jetzt kommt eine zweite Disziplin hinzu: <strong>Data Science, Machine Learning und AI Engineering</strong>. Ich übernehme gerne Verantwortung für technische Entscheidungen, arbeite gerne interdisziplinär und baue Software, die für ihre Nutzer einen messbaren Unterschied macht.",
+        "tl1.when": "2026 – Jan. 2027",
+        "tl1.desc": "Statistik, klassisches ML, Deep Learning, NLP, LLMs, RAG und LangGraph-Agenten. Als Nächstes: MCP, Multi-Agenten-Systeme, Evals und KI-Sicherheit.",
+        "tl2.when": "Gründer",
+        "tl2.where": "SaaS · allein entwickelt",
+        "tl2.desc": "Fullstack-Architektur mit React, TypeScript, Node.js, Express und Prisma; Stripe und Google Cloud Vision; Logic-Builder mit React Flow.",
+        "tl3.where": "Softwareentwickler · St. Georgen",
+        "tl3.desc": "Low-Code-Plattform MR.KNOW: BPMN-ProcessBoard &amp; -Editor, interaktive Prozesslandkarte (KotlinJS), Redesign des Prozessmonitors, Refactoring von Legacy-jQuery-Code.",
+        "tl4.where": "Online-Universität GeekBrains",
+        "tl4.desc": "Hier hat alles angefangen: JavaScript, Vue, React, Node.js, Linux und Git.",
+
+        // Skills
+        "skills.eyebrow": "02 · Skills",
+        "skills.title": "Zwei Schwerpunkte, ein Engineer",
+        "skills.lead": "Ein solides Fundament im Web Engineering – und ein wachsendes Toolkit für Daten, Machine Learning und KI-Agenten.",
+        "trackA.meta": "4,5+ Jahre · Berufserfahrung",
+        "trackB.meta": "Bootcamp · 2026 – Jan. 2027",
+        "cardA2": "Backend &amp; Daten",
+        "cardA3": "Integrationen",
+        "cardA4": "Tooling &amp; Prozesse",
+        "cardB1": "Python &amp; Daten",
+        "cardB2": "Statistik",
+        "cardB6": "KI-Agenten in Produktion",
+        "skills.next": "Als Nächstes auf meiner Liste:",
+        "upcoming.badge": "Demnächst · Wochen 9–11",
+        "upcoming.text": "Das lerne ich als Nächstes im Bootcamp, bis Januar 2027:",
+
+        // Projects
+        "projects.eyebrow": "03 · Projekte",
+        "projects.title": "Ausgewählte Arbeiten",
+        "askforge.tag": "Highlight · SaaS · Solo-Gründer",
+        "askforge.desc": "Macht aus langweiligen Formularen Gespräche, die Menschen zu Ende führen. Aus einem hochgeladenen PDF, einer Word-Datei oder einem Foto eines Fragebogens baut die KI von AskForge eine freundliche Chat-Umfrage – oder man startet im visuellen Editor bei null. Geteilt wird per Link oder QR-Code, die Antworten lassen sich exportieren.",
+        "askforge.pt1": "Fullstack-Architektur allein konzipiert und umgesetzt – vom Konzept bis zum Produktivbetrieb",
+        "askforge.pt2": "Graphbasierter <strong>No-Code-Logic-Builder</strong> mit React Flow für verzweigte Umfragen",
+        "askforge.pt3": "Dokumentenerkennung mit <strong>Google Cloud Vision</strong>, Abonnements über <strong>Stripe</strong>",
+        "askforge.link": "askforge.org besuchen",
+        "scout.tag": "KI-Agent · In aktiver Entwicklung",
+        "scout.desc": "Ein Support-Ticket-Assistent für ein fiktives SaaS-Unternehmen. Er liest eingehende Tickets, ruft das Kundenkonto ab, klassifiziert das Ticket und löst es entweder automatisch oder übergibt es zur Entscheidung an einen Menschen.",
+        "scout.pt1": "<strong>LangGraph-Workflow</strong> mit bedingtem Routing, Checkpointing und Pause/Resume per <code>interrupt()</code> – ein pausierter Lauf lässt sich sogar in einem anderen Prozess fortsetzen",
+        "scout.pt2": "Begrenzter <strong>ReAct-Agent-Loop</strong> mit Schrittlimit, menschlicher Freigabe und abgesicherten Server-Tools <code>web_fetch</code> / <code>code_execution</code>",
+        "scout.pt3": "Schema-validierte Triage mit Retries, JSONL-Telemetrie pro Schritt, OpenTelemetry-Traces in Jaeger, Offline-Testsuite",
+        "scout.link": "Auf GitHub ansehen",
+        "rag.title": "Buch-Q&amp;A mit RAG",
+        "rag.desc": "Beantwortet Fragen zu einem vollständigen Buch aus Project Gutenberg ausschließlich anhand abgerufener Textpassagen und zeigt die Passagen, auf denen jede Antwort basiert. Inklusive Kommandozeilen-Tool.",
+        "flowers.title": "Blumen-Klassifikation",
+        "flowers.desc": "Klassifiziert Rosen, Sonnenblumen und Tulpen mit nur 100 Trainingsfotos pro Klasse – mit einem eingefrorenen vortrainierten CNN, einem Dense-Head und Data Augmentation. Inklusive Streamlit-App.",
+        "diabetes.tag": "EDA · Klassifikation",
+        "diabetes.title": "Diabetes-Screening-Modell",
+        "flowers.soon": "Code folgt in Kürze",
+        "diabetes.desc": "Hypothesengetriebene EDA auf dem Pima-Indians-Datensatz, leakage-freie Imputation versteckter fehlender Werte und eine auf Recall optimierte logistische Regression. Sie erkennt <strong>80 % der Diabetesfälle</strong> im Testset – gegenüber 50 % beim nicht optimierten Modell.",
+        "pico.tag": "Landingpage · Kundenprojekt",
+        "pico.desc": "Eine zweisprachige (EN/IT) Landingpage für eine italienische Lederwerkstatt mit über 20 Jahren Erfahrung in handgefertigten Taschen, Geldbörsen und Gürteln.",
+        "movie.tag": "Vue-SPA · 2021",
+        "movie.desc": "Eine App zum Durchstöbern der IMDb Top 250 mit Filmdetails, Titelsuche und Listenverwaltung. Eines meiner frühen Vue-Projekte.",
+
+        // Contact & footer
+        "contact.eyebrow": "04 · Kontakt",
+        "contact.title": "Lassen Sie uns gemeinsam etwas Sinnvolles bauen.",
+        "contact.lead": "Ich bin offen für Rollen in Fullstack, Frontend und AI Engineering. Am schnellsten erreichen Sie mich über LinkedIn.",
+        "contact.cta": "Auf LinkedIn vernetzen",
+        "footer.text": "Nicolai Turcan · Design &amp; Code von mir"
+    }
+};
