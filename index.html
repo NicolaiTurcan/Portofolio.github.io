@@ -680,8 +680,62 @@
                     </div>
                 </article>
 
-                <!-- Featured: Diabetes -->
+                <!-- Featured: Bike Sharing -->
                 <article class="feature reveal">
+                    <a class="feature__media" href="https://nicolaiturcan.github.io/AMLE-Bike-sharing/"
+                        target="_blank" rel="noopener" tabindex="-1">
+                        <img src="./img/bike-sharing.jpg" alt="Bike Sharing Demand project page" width="1200"
+                            height="750" loading="lazy">
+                    </a>
+                    <div class="feature__body">
+                        <p class="tag" data-i18n="bike.tag">Regression · Ensembles · Live demo</p>
+                        <h3 class="feature__title" data-i18n="bike.title">Bike Sharing Demand</h3>
+                        <p class="feature__desc" data-i18n="bike.desc">
+                            Predicts how many bikes Capital Bikeshare in Washington, D.C. rents in an hour, from the
+                            hour, the type of day and the weather, so the operations team can plan bikes, trucks and
+                            staff. A linear model, a decision tree and five ensembles are compared against two
+                            baselines.
+                        </p>
+                        <ul class="feature__points">
+                            <li data-i18n="bike.pt1">A tuned <strong>XGBoost</strong> misses by <strong>98.9 bikes per
+                                    hour</strong> on average, 57% better than a rule-based baseline (232) and far
+                                ahead of the mean baseline (521)</li>
+                            <li data-i18n="bike.pt2">No data leakage: split before exploring, leaking columns removed,
+                                preprocessing inside a <code>Pipeline</code>, models chosen by cross-validation and the
+                                test set opened once</li>
+                            <li data-i18n="bike.pt3">Residual analysis hour by hour: the biggest misses are unofficial
+                                holidays like Christmas Eve, which leads to a concrete recommendation for the
+                                operations team</li>
+                        </ul>
+                        <ul class="stack">
+                            <li>Python</li>
+                            <li>pandas</li>
+                            <li>scikit-learn</li>
+                            <li>XGBoost</li>
+                            <li>CatBoost</li>
+                            <li>Seaborn</li>
+                        </ul>
+                        <div class="links">
+                            <a class="link" href="https://nicolaiturcan.github.io/AMLE-Bike-sharing/#try"
+                                target="_blank" rel="noopener">
+                                <span data-i18n="bike.live">Try the model</span>
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
+                            </a>
+                            <a class="link" href="https://github.com/NicolaiTurcan/AMLE-Bike-sharing" target="_blank"
+                                rel="noopener">
+                                <span data-i18n="bike.code">View on GitHub</span>
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Featured: Diabetes -->
+                <article class="feature feature--reverse reveal">
                     <a class="feature__media" href="https://nicolaiturcan.github.io/first_amle_project_diabetes/"
                         target="_blank" rel="noopener" tabindex="-1">
                         <img src="./img/diabetes.jpg" alt="Diabetes Screening project page" width="1200"
